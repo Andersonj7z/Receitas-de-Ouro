@@ -49,42 +49,16 @@
 
 <!-- Cards -->
 <section class="row sec-receitas" id="receitas">
-  <div class="card col-3" style="width:300px">
-    <img class="card-img-top" src="{% static 'img/feijoada.jpg'%}" alt="Card image">
-    <div class="card-body">
-      <h4 class="card-title">Feijoada</h4>
-      <p class="card-text">Feijoada um clássico da nossa culinária, a feijoada é um prato que possui algumas variações,
-        mas todas bem deliciosas!... </p>
-      <a href="{% url 'ver_receitas'%}" class="btn btn-primary">Ver Receitas</a>
+  {% for receita in receitas %}
+    <div class="card col-3" style="width:300px">
+      <img class="card-img-top" src="{{ receita.imagem.url }}" alt="{{ receita.titulo }}">
+      <div class="card-body">
+        <h4 class="card-title">{{ receita.titulo }}</h4>
+        <p class="card-text">{{ receita.descricao|truncatewords:20}}</p>
+        <a href="/receita/{{receita.id}}" class="btn btn-primary">Ver Receitas</a>
+      </div>
     </div>
-  </div>
-  <div class="card col-3" style="width:300px">
-    <img class="card-img-top" src="{% static 'img/pequi.jpg'%}" alt="Card image">
-    <div class="card-body">
-      <h4 class="card-title">Arroz com Pequi</h4>
-      <p class="card-text">“O arroz com pequi é mais que um prato” é uma memória afetiva para quem cresceu no cerrado.
-      </p>
-      <a href="{% url 'ver_receitas'%}" class="btn btn-primary">Ver Receitas</a>
-    </div>
-  </div>
-  <div class="card col-3" style="width:300px">
-    <img class="card-img-top" src="{% static 'img/cuscuz.jpg'%}" alt="Card image">
-    <div class="card-body">
-      <h4 class="card-title">Cuscuz Simples</h4>
-      <p class="card-text">Se você procura uma opção prática e saborosa para complementar o seu café da manhã ou lanche
-        cuscuz é a solução.</p>
-      <a href="{% url 'ver_receitas'%}" class="btn btn-primary">Ver Receitas</a>
-    </div>
-  </div>
-  <div class="card col-3" style="width:300px">
-    <img class="card-img-top" src="{% static 'img/bolo.jpg'%}" alt="Card image">
-    <div class="card-body">
-      <h4 class="card-title">Bolo de Milho</h4>
-      <p class="card-text">O bolo de milho é uma verdadeira homenagem aos sabores tradicionais da culinária brasileira
-      </p>
-      <a href="{% url 'ver_receitas'%}" class="btn btn-primary">Ver Receitas</a>
-    </div>
-  </div>
+  {% endfor %}
 </section>
 
 {% endblock %}
