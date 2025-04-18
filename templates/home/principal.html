@@ -47,18 +47,40 @@
   </button>
 </div>
 
-<!-- Cards -->
-<section class="row sec-receitas" id="receitas">
-  {% for receita in receitas %}
-    <div class="card col-3" style="width:300px">
-      <img class="card-img-top" src="{{ receita.imagem.url }}" alt="{{ receita.titulo }}">
-      <div class="card-body">
-        <h4 class="card-title">{{ receita.titulo }}</h4>
-        <p class="card-text">{{ receita.descricao|truncatewords:20}}</p>
-        <a href="/receita/{{receita.id}}" class="btn btn-primary">Ver Receitas</a>
+<!-- Carrodel Cards -->
+<div id="carousel-receitas" class="carousel slide">
+  <div class="carousel-inner">
+    {% for receita in receitas %}
+      {% if forloop.first or forloop.counter0|divisibleby:4 %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <div class="row justify-content-center">
+      {% endif %}
+
+          <div class="card col-md-3 mx-2" style="width: 300px;">
+            <img class="card-img-top" src="{{ receita.imagem.url }}" alt="{{ receita.titulo }}"
+              style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h4 class="card-title">{{ receita.titulo }}</h4>
+              <p class="card-text">{{ receita.descricao|truncatewords:20 }}</p>
+              <a href="/receita/{{receita.id}}" class="btn btn-primary">Ver Receitas</a>
+            </div>
+          </div>
+
+      {% if forloop.counter|divisibleby:4 or forloop.last %}
+        </div>
       </div>
-    </div>
-  {% endfor %}
-</section>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Controles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-receitas" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel-receitas" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
 
 {% endblock %}
