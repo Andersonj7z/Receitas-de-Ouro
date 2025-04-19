@@ -1,27 +1,42 @@
 <!-- templates/home/receitas.html -->
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% load static %}
 
-{% block title %}Receitas{% endblock %}
+{% load custom_filters from home %}
 
-{% block content %}
 
+{% block title %}Receitas{% endblock%}
+
+{% block content %} 
 
 {% if receita.imagem %}
-<img src="{{ receita.imagem.url }}" alt="{{ receita.titulo }}" class="d-block w-100 car-img">
+<img
+  src="{{ receita.imagem.url }}"
+  alt="{{ receita.titulo }}"
+  class="d-block w-100 car-img"/>
 {% endif %}
 
 <div class="container">
-    
-    <div class="ingredientes">
-        <p class="title">{{ receita.titulo }}</p>
-        <p class="texto">{{ receita.ingredients|linebreaks }}</p>
+  <div class="ingredientes">
+    <p class="title">{{ receita.titulo }}</p>
+    <p class="texto">{{ receita.ingredients|linebreaks }}</p>
+  </div>
+  <div class="Modo_de_preparo">
+    <p class="title">Modo de Preparo</p>
+    <p class="texto">{{ receita.preparo|linebreaks }}</p>
+  </div>
+  {% if receita.video_url %}
+  <div class="video-container">
+    <p class="title">Vídeo de Preparo</p>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe
+        class="embed-responsive-item"
+        src="{{ receita.video_url|youtube_embed }}"
+        allowfullscreen>
+      </iframe>
     </div>
-    <div class="Modo_de_preparo">
-        <p class="title">Modo de Preparo</p>
-        <p class="texto">{{ receita.preparo|linebreaks }}</p>
-    </div>
-    
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

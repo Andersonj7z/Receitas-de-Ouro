@@ -136,8 +136,8 @@ body.dark-mode .container {
   border-radius: 10px !important;
 }
 
-.sec-receitas {
-  margin: 1% !important;
+#carousel-receitas {
+  margin: 2% !important;
   margin-left: 10% !important;
   margin-right: 10% !important;
   justify-content: center !important;
@@ -149,6 +149,29 @@ body.dark-mode .container {
   margin: 0% 1% 1% !important;
   text-align: center !important;
   box-shadow: 4px 4px 10px rgb(80, 79, 79);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column; /* Coloca os itens em coluna */
+  justify-content: space-between; /* Espaça o conteúdo e o botão */
+  min-height: 150px; /* Defina uma altura mínima para o corpo do card (ajuste conforme necessário) */
+  padding: 1em; /* Mantenha o padding que você já tem */
+  text-align: center; /* Mantenha o alinhamento do texto centralizado */
+}
+
+.card-title {
+  margin-bottom: 0.5em; /* Adicione um pouco de espaço entre o título e o texto */
+}
+
+.card-text {
+  margin-bottom: 1em; /* Adicione um pouco de espaço entre o texto e o botão */
+  flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+}
+
+.card-body .btn-primary {
+  align-self: center; /* Alinha o botão horizontalmente ao centro */
+  width: 100%; /* Opcional: faz o botão ocupar a largura total do card */
 }
 
 footer {
@@ -164,7 +187,6 @@ footer {
 
 .title {
   font-weight: bold !important;
-  padding-left: 30px;
 }
 
 .container {
@@ -175,8 +197,4 @@ footer {
   padding: 2em;
   margin: 3em;
   margin-bottom: 7em;
-}
-
-.texto{
-  padding-left: 30px !important;
 }
