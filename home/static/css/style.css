@@ -174,14 +174,29 @@ body.dark-mode .container {
   width: 100%; /* Opcional: faz o botão ocupar a largura total do card */
 }
 
-footer {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0.8em !important;
-  border-top: 2px solid #FFA500;
+/* Style video */
+.video-container {
+  margin-top: 20px;
 }
 
+.embed-responsive {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.embed-responsive-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
 
 /* Style Pagina Receitas */
 
@@ -197,4 +212,12 @@ footer {
   padding: 2em;
   margin: 3em;
   margin-bottom: 7em;
+}
+
+footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.8em !important;
+  border-top: 2px solid #FFA500;
 }

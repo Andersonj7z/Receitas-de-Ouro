@@ -3,8 +3,7 @@
 
 {% load static %}
 
-{% load custom_filters from home %}
-
+{% load custom_filters %}
 
 {% block title %}Receitas{% endblock%}
 
@@ -18,14 +17,6 @@
 {% endif %}
 
 <div class="container">
-  <div class="ingredientes">
-    <p class="title">{{ receita.titulo }}</p>
-    <p class="texto">{{ receita.ingredients|linebreaks }}</p>
-  </div>
-  <div class="Modo_de_preparo">
-    <p class="title">Modo de Preparo</p>
-    <p class="texto">{{ receita.preparo|linebreaks }}</p>
-  </div>
   {% if receita.video_url %}
   <div class="video-container">
     <p class="title">Vídeo de Preparo</p>
@@ -38,5 +29,14 @@
     </div>
   </div>
   {% endif %}
+  <div class="ingredientes">
+    <p class="title">{{ receita.titulo }}</p>
+    <p class="texto">{{ receita.ingredients|linebreaks }}</p>
+  </div>
+  <div class="Modo_de_preparo">
+    <p class="title">Modo de Preparo</p>
+    <p class="texto">{{ receita.preparo|linebreaks }}</p>
+  </div>
+  
 </div>
 {% endblock %}
