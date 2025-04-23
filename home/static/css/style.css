@@ -44,7 +44,6 @@
 input:checked+.slider i {
   transform: translateX(24px);
   color: #fdd835;
-  /* amarelo sol */
 }
 
 /* Cor de fundo no modo escuro */
@@ -89,13 +88,11 @@ body.light-mode .container {
 /* ======== TEMA ESCURO ======== */
 body.dark-mode {
   background-color: #121212;
-  color: #ffffff;
 }
 
 body.dark-mode .nav-top,
 body.dark-mode footer {
   background-color: #1a1a1a;
-  color: #ffffff;
 }
 
 body.dark-mode .card {
@@ -127,51 +124,57 @@ body.dark-mode .container {
   color: white !important;
 }
 
-.car-img {
-  max-height: 40em !important;
-}
+
 
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.6) !important;
   border-radius: 10px !important;
 }
 
+.car-img {
+  max-height: 35em !important;
+}
+
 #carousel-receitas {
-  margin: 2% !important;
+  /* margin: 2% !important; */
   margin-left: 10% !important;
   margin-right: 10% !important;
   justify-content: center !important;
-  margin-bottom: 5em !important;
+  /* margin-bottom: 5em !important; */
 }
 
 .card {
-  padding: 1%;
-  margin: 0% 1% 1% !important;
+  margin: 2% 1% 6% !important;
   text-align: center !important;
   box-shadow: 4px 4px 10px rgb(80, 79, 79);
 }
 
 .card-body {
   display: flex;
-  flex-direction: column; /* Coloca os itens em coluna */
-  justify-content: space-between; /* Espaça o conteúdo e o botão */
-  min-height: 150px; /* Defina uma altura mínima para o corpo do card (ajuste conforme necessário) */
-  padding: 1em; /* Mantenha o padding que você já tem */
-  text-align: center; /* Mantenha o alinhamento do texto centralizado */
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+  padding: 1em;
+  text-align: center;
+}
+
+.card-img-top{
+  margin-top: 4%;
+  height: 200px !important;
 }
 
 .card-title {
-  margin-bottom: 0.5em; /* Adicione um pouco de espaço entre o título e o texto */
+  margin-bottom: 0.5em;
 }
 
 .card-text {
-  margin-bottom: 1em; /* Adicione um pouco de espaço entre o texto e o botão */
-  flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+  margin-bottom: 2em !important;
+  flex-grow: 1;
 }
 
 .card-body .btn-primary {
-  align-self: center; /* Alinha o botão horizontalmente ao centro */
-  width: 100%; /* Opcional: faz o botão ocupar a largura total do card */
+  align-self: center;
+  width: 100%; 
 }
 
 /* Style video */
@@ -202,6 +205,7 @@ body.dark-mode .container {
 
 .title {
   font-weight: bold !important;
+  padding-left: 15px !important;
 }
 
 .container {
@@ -219,5 +223,5 @@ footer {
   align-items: center !important;
   justify-content: center !important;
   padding: 0.8em !important;
-  border-top: 2px solid #FFA500;
+  
 }

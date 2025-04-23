@@ -31,12 +31,24 @@
   {% endif %}
   <div class="ingredientes">
     <p class="title">{{ receita.titulo }}</p>
-    <p class="texto">{{ receita.ingredients|linebreaks }}</p>
-  </div>
+    <ul class="texto">
+      {% for linha in receita.ingredients.splitlines %}
+        {% if linha %}
+          <li>{{ linha }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>  
   <div class="Modo_de_preparo">
     <p class="title">Modo de Preparo</p>
-    <p class="texto">{{ receita.preparo|linebreaks }}</p>
-  </div>
+    <ol class="texto">
+      {% for passo in receita.preparo.splitlines %}
+        {% if passo %}
+          <li>{{ passo }}</li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </div>  
   
 </div>
 {% endblock %}

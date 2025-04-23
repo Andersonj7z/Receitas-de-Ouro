@@ -2,7 +2,7 @@ from django.db import models
 
 class Receita(models.Model):
     titulo = models.CharField(max_length=50)
-    descricao = models.TextField(max_length=150)
+    descricao = models.TextField(max_length=200)
     ingredients = models.TextField()
     preparo = models.TextField()
     imagem = models.ImageField(upload_to='receitas/', null=True, blank=True)
