@@ -122,9 +122,18 @@ body.dark-mode .container {
 .nav-link {
   font-weight: bold !important;
   color: white !important;
+  padding: 0.7em !important;
 }
 
+.nav-link {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
 
+.nav-link:hover {
+  transform: scale(1.1); /* aumenta o tamanho levemente */
+  filter: brightness(1.2); /* deixa mais brilhante */
+  cursor: pointer; /* muda o cursor para parecer clicável */
+}
 
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.6) !important;
