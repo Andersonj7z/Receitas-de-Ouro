@@ -19,20 +19,22 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="mynavbar">
-                    
-                    <div class="d-flex align-items-center mx-auto gap-3">
-                        <a class="nav-link" href="/">Home</a>
-                        <img class="logo img-fluid" src="{% static 'img/logotipo2.png'%}" alt="logotipo" width="80">
-                        <a class="nav-link" href="#carousel-receitas">Receitas</a>
+                <div class="collapse navbar-collapse justify-content-center" id="mynavbar">
+                    <div class="d-flex align-items-center gap-4">
+                      <a class="nav-link nav-link-custom fw-bold" href="/">Home</a>
+                      <img class="logo img-fluid" src="{% static 'img/logotipo2.png'%}" alt="logotipo" width="70">
+                      <a class="nav-link nav-link-custom fw-bold" href="#carousel-receitas">Receitas</a>
                     </div>
-                    <label class="switch">
-                        <input type="checkbox" id="toggle-theme">
-                        <span class="slider">
-                            <i class="fas fa-moon" id="toggle-icon"></i>
-                        </span>
+                  
+                    <label class="switch position-absolute end-0 me-4">
+                      <input type="checkbox" id="toggle-theme">
+                      <span class="slider">
+                        <i class="fas fa-moon" id="toggle-icon"></i>
+                      </span>
                     </label>
-                </div>
+                  </div>
+                  
+                
             </div>
         </nav>
     </header>
