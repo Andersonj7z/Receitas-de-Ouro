@@ -119,10 +119,15 @@ body.dark-mode .container {
 }
 
 /* ======== GERAIS ======== */
+.collapse{
+  margin-left: 4% !important;
+}
+
 .nav-link {
   font-weight: bold !important;
   color: white !important;
   padding: 0.7em !important;
+  
 }
 
 .nav-link {
@@ -232,5 +237,10 @@ footer {
   align-items: center !important;
   justify-content: center !important;
   padding: 0.8em !important;
-  
+}
+
+@media (max-width: 768px){
+  .carousel{
+    margin-bottom: 4em !important;
+  }
 }
